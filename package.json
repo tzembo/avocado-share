@@ -1,0 +1,26 @@
+{
+  "name": "avocado-share",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "watch": {
+    "pack": "webpack"
+  },
+  "scripts": {
+    "pack": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npm-watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-watch": "^0.3.0",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.0.8"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "mongodb-stitch-browser-sdk": "^4.0.9",
+    "stitch": "^0.3.3"
+  }
+}
