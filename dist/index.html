@@ -4,6 +4,9 @@
      <title>Avocado Share</title>
      <link rel="stylesheet" type="text/css" href="main.css">
      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+     <style>
+     @import url('https://fonts.googleapis.com/css?family=Arvo:400,700');
+     </style>
      <meta charset='utf-8'>
      <meta name="google-signin-scope" content="profile email">
      <meta name="google-signin-client_id" content="avocado-share.apps.googleusercontent.com">
@@ -12,27 +15,33 @@
    <body>
      <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.0.0/stitch.js"></script>
      <div class="container">
-       <div class="header"></div>
-       <img src="avocado.png">
+       <div class="header">🥑SHARE</div>
        <script src="main.js"></script>
        <div id="google-auth" class="g-signin1" data-onsuccess="onSignIn" data-theme="dark"></div>
         <script>
           function onSignIn(googleUser) {
-            // The ID token you need to pass to your backend:
             var id_token = googleUser.getAuthResponse().id_token;
             console.log("ID Token: " + id_token);
           };
         </script>
        <button id="avocado-button">Find me an avocado!</button>
+
+        <div class="dropdown">
+          <button class="dropbtn">Location: Main Café</button>
+          <div class="dropdown-content">
+            <a class="loc-option" data-loc="Main Cafe">Main Cafe</a>
+            <a class="loc-option" data-loc="Engineering Kitchen">Engineering Kitchen</a>
+            <a class="loc-option" data-loc="Phase 3 Kitchen">Phase 3 Kitchen</a>
+            <a class="loc-option" data-loc="HR Kitchen">HR Kitchen</a>
+          </div>
+        </div>
        <div class="spinner">
         <div class="bounce1"></div>
         <div class="bounce2"></div>
         <div class="bounce3"></div>
       </div>
-       <div id="feed">
-         <p class="feed-item"><span class="green">Thomas</span> shared an 🥑 with <span class="green">Varsha</span></p>
-         <p class="feed-item"><span class="green">Rebecca</span> shared an 🥑 with <span class="green">Cindy</span></p>
-       </div>
+      <div id="result"></div>
+       <div id="feed"></div>
        <button class="logout">Sign out</button>
      </div>
    </body>
